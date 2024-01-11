@@ -7,12 +7,16 @@
 {% block content %}
     <div class="features">
         <h1>{{ title }}</h1>
+        {% filter upper%}
         <p>some long really long text message...</p>
+        {% endfilter %}
         <button class="btn btn-warning">На страницу о нас</button>
 
         {% for val in values %}
             {% if val == 'Hello' %}
-                <p>{{ val }}</p>
+                {% filter upper%}
+                    <p>{{ val }}</p>
+                {% endfilter %}
             {% endif %}
         {% endfor %}
 
